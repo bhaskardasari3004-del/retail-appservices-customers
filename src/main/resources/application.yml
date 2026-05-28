@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: retail-appservices-customers
+
+  config:
+    import: optional:configserver:http://localhost:8888
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+  instance:
+    instance-id: retail-appservices-customers
+    prefer-ip-address: true
