@@ -6,7 +6,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 
 @EnableDiscoveryClient
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.retailbanking")
 public class RetailAppservicesCustomersApplication {
 
 	public static void main(String[] args) {
