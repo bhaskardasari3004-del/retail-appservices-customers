@@ -1,21 +1,27 @@
-# ==========================
+# ==========================================
 # Stage 1 - Build
-# ==========================
-FROM maven:3.9.11-eclipse-temurin-21 AS builder
+# ==========================================
+
+FROM eclipse-temurin:21-jdk AS builder
 
 WORKDIR /build
 
+COPY .mvn .mvn
+COPY mvnw .
 COPY pom.xml .
 
-RUN mvn dependency:go-offline
+RUN chmod +x mvnw
 
-COPY src ./src
+#RUN ./mvnw dependency:go-offline
 
-RUN mvn clean package -DskipTests
+COPY . .
 
-# ==========================
+RUN ./mvnw clean package -DskipTests
+
+# ==========================================
 # Stage 2 - Runtime
-# ==========================
+# ==========================================
+
 FROM eclipse-temurin:21-jre
 
 WORKDIR /app

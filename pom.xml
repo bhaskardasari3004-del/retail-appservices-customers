@@ -98,6 +98,20 @@
         </dependencies>
     </dependencyManagement>
 
+    <repositories>
+
+        <repository>
+            <id>nexus-snapshots</id>
+            <url>http://localhost:8082/repository/maven-snapshots/</url>
+        </repository>
+
+        <repository>
+            <id>nexus-releases</id>
+            <url>http://localhost:8082/repository/maven-releases/</url>
+        </repository>
+
+    </repositories>
+
     <build>
         <plugins>
             <plugin>

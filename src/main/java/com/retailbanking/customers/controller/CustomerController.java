@@ -1,7 +1,6 @@
 package com.retailbanking.customers.controller;
 
 import com.retailbanking.common.constants.CorrelationConstants;
-import com.retailbanking.common.logging.CorrelationIdFilter;
 import com.retailbanking.common.response.ApiResponse;
 import com.retailbanking.customers.dto.request.CustomerRequest;
 import com.retailbanking.customers.dto.response.CustomerResponse;
